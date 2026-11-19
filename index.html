@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>José L. Mendoza Valdés · Universidad Tecnológica de Panamá</title>
+  <meta name="description" content="Página docente de José L. Mendoza Valdés, profesor de la Universidad Tecnológica de Panamá. Visión por computadora, aprendizaje profundo y patrimonio cultural digital.">
+  <meta name="author" content="José L. Mendoza Valdés">
+  <link rel="canonical" href="https://joselmendozav.github.io/">
+  <link rel="alternate" hreflang="es" href="https://joselmendozav.github.io/">
+  <link rel="alternate" hreflang="en" href="https://joselmendozav.github.io/index-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://joselmendozav.github.io/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile">
+  <meta property="og:locale" content="es_PA">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:title" content="José L. Mendoza Valdés · Universidad Tecnológica de Panamá">
+  <meta property="og:description" content="Profesor de la UTP. Visión por computadora, aprendizaje profundo y patrimonio cultural digital.">
+  <meta property="og:url" content="https://joselmendozav.github.io/">
+  <meta property="og:image" content="https://joselmendozav.github.io/foto.jpg">
+  <meta property="og:image:alt" content="Retrato de José L. Mendoza Valdés">
+  <meta name="twitter:card" content="summary">
+
+  <meta name="theme-color" content="#1b365d">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b365d'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='26' fill='%23fff'%3EJM%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+
+  <style>
+    :root {
+      --bg: #f8f8f6;
+      --surface: #ffffff;
+      --text: #1a1f2b;
+      --muted: #535b69;
+      --accent: #1b365d;
+      --accent-hover: #12284a;
+      --accent-soft: #e9eef6;
+      --border: #e3e5e9;
+      --radius: 12px;
+      --maxw: 1040px;
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f141c;
+        --surface: #161d28;
+        --text: #e6e9ef;
+        --muted: #a3acba;
+        --accent: #9cbcf0;
+        --accent-hover: #c2d6f7;
+        --accent-soft: #1c2a40;
+        --border: #263142;
+        color-scheme: dark;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; -webkit-text-size-adjust: 100%; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 16.5px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: var(--accent-hover); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+    .icon { width: 1em; height: 1em; flex: none; }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+    }
+    .skip-link {
+      position: absolute; left: 16px; top: -100px; z-index: 100;
+      background: var(--accent); color: var(--surface); padding: 8px 14px; border-radius: 8px;
+    }
+    .skip-link:focus { top: 12px; color: var(--surface); }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+    .wrap > * { min-width: 0; }
+    h1, h3, .doi, .meta a { overflow-wrap: anywhere; }
+
+    /* ---------- Barra superior ---------- */
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      -webkit-backdrop-filter: saturate(160%) blur(10px);
+      backdrop-filter: saturate(160%) blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar .wrap { display: flex; align-items: center; gap: 24px; height: 60px; }
+    .brand { font-weight: 600; color: var(--text); text-decoration: none; letter-spacing: -0.01em; white-space: nowrap; }
+    .nav { display: flex; gap: 22px; margin-left: auto; }
+    .nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+    .nav a:hover { color: var(--accent); }
+    .lang {
+      display: inline-flex; padding: 3px; border: 1px solid var(--border);
+      border-radius: 999px; background: var(--surface); font-size: 0.8rem; font-weight: 600;
+    }
+    .lang a, .lang span { padding: 3px 10px; border-radius: 999px; text-decoration: none; line-height: 1.4; }
+    .lang a { color: var(--muted); }
+    .lang a:hover { color: var(--accent); }
+    .lang [aria-current] { background: var(--accent); color: var(--surface); }
+
+    /* ---------- Encabezado / perfil ---------- */
+    .hero { padding: 64px 0 56px; border-bottom: 1px solid var(--border); }
+    .hero .wrap { display: grid; grid-template-columns: 220px 1fr; gap: 48px; align-items: center; }
+    .avatar {
+      width: 220px; aspect-ratio: 1; border-radius: 50%; overflow: hidden;
+      background: var(--accent-soft);
+      box-shadow: 0 0 0 6px var(--surface), 0 0 0 7px var(--border), 0 18px 40px -18px rgba(15, 30, 60, .45);
+    }
+    /* Recorte cuadrado centrado en el rostro: cover + zoom hacia la cara.
+       La esquina inferior derecha de la foto queda fuera del recorte. */
+    .avatar img {
+      display: block; width: 100%; height: 100%;
+      object-fit: cover; object-position: 50% 0%;
+      transform: scale(1.35); transform-origin: 50% 36%;
+    }
+    .eyebrow {
+      display: inline-block; margin: 0 0 10px; padding: 4px 12px; border-radius: 999px;
+      background: var(--accent-soft); color: var(--accent);
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em;
+    }
+    .hero h1 {
+      margin: 0 0 12px; font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: 1.15;
+      letter-spacing: -0.025em; font-weight: 700;
+    }
+    .hero h1 .title { font-weight: 500; color: var(--muted); }
+    .affil { margin: 0 0 18px; color: var(--muted); line-height: 1.55; }
+    .affil strong { color: var(--text); font-weight: 600; }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 0 0 22px; padding: 0; list-style: none; font-size: 0.95rem; }
+    .meta li { display: inline-flex; align-items: center; gap: 8px; }
+    .meta .icon { color: var(--accent); }
+    .links { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+    .links a {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 7px 14px; border: 1px solid var(--border); border-radius: 999px;
+      background: var(--surface); color: var(--text); text-decoration: none;
+      font-size: 0.875rem; font-weight: 500;
+      transition: border-color .15s, color .15s, transform .15s;
+    }
+    .links a:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+    .links .icon { width: 1.1em; height: 1.1em; color: var(--accent); }
+
+    /* ---------- Secciones ---------- */
+    main section { padding: 52px 0; border-bottom: 1px solid var(--border); }
+    main section .wrap { display: grid; grid-template-columns: 200px 1fr; gap: 48px; }
+    main h2 {
+      margin: 0; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent);
+    }
+    main h2::after {
+      content: ""; display: block; width: 28px; height: 2px; margin-top: 10px;
+      background: var(--accent); border-radius: 2px;
+    }
+    .list { margin: 0; padding: 0; list-style: none; }
+
+    /* Educación y proyectos: fila con año a la derecha */
+    .entry { display: flex; gap: 24px; justify-content: space-between; padding: 14px 0; border-top: 1px solid var(--border); }
+    .entry:first-child { border-top: 0; padding-top: 0; }
+    .entry h3 { margin: 0; font-size: 1.02rem; font-weight: 600; line-height: 1.4; }
+    .entry p { margin: 2px 0 0; color: var(--muted); font-size: 0.95rem; }
+    .entry .when { flex: none; color: var(--muted); font-size: 0.9rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .entry .note { color: var(--accent); font-weight: 500; }
+
+    /* Áreas de interés */
+    .interests { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+    .interests li {
+      padding: 14px 16px; background: var(--surface); border: 1px solid var(--border);
+      border-left: 3px solid var(--accent); border-radius: 8px; font-size: 0.97rem; line-height: 1.5;
+    }
+
+    /* Publicaciones */
+    .pubs { counter-reset: pub; }
+    .pub { position: relative; padding: 16px 0 16px 44px; border-top: 1px solid var(--border); counter-increment: pub; }
+    .pub:first-child { border-top: 0; padding-top: 0; }
+    .pub::before {
+      content: counter(pub); position: absolute; left: 0; top: 16px;
+      width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center;
+      background: var(--accent-soft); color: var(--accent); font-size: 0.8rem; font-weight: 700;
+    }
+    .pub:first-child::before { top: 0; }
+    .pub h3 { margin: 0 0 4px; font-size: 1.02rem; font-weight: 600; line-height: 1.45; }
+    .pub .authors { margin: 0; color: var(--muted); font-size: 0.93rem; }
+    .pub .authors .me { color: var(--text); font-weight: 600; }
+    .pub .venue { margin: 2px 0 8px; font-size: 0.93rem; }
+    .pub .venue em { color: var(--text); }
+    .pub .tags { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+    .badge {
+      display: inline-block; padding: 1px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 700;
+      background: var(--accent); color: var(--surface); letter-spacing: 0.03em;
+    }
+    .doi {
+      display: inline-flex; align-items: center; gap: 5px; font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; padding: 2px 10px; border: 1px solid var(--border); border-radius: 6px;
+      background: var(--surface);
+    }
+    .doi:hover { border-color: var(--accent); }
+    .more { margin: 22px 0 0; font-weight: 500; }
+
+    /* Docencia */
+    .courses { columns: 2; column-gap: 40px; }
+    .courses li { break-inside: avoid; padding: 8px 0 8px 20px; position: relative; border-bottom: 1px dashed var(--border); }
+    .courses li::before {
+      content: ""; position: absolute; left: 2px; top: 1.05em; width: 7px; height: 7px;
+      border-radius: 2px; background: var(--accent); transform: rotate(45deg);
+    }
+    .lead { margin: 0 0 14px; color: var(--muted); }
+
+    /* Pie */
+    footer { padding: 36px 0 48px; color: var(--muted); font-size: 0.875rem; text-align: center; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 860px) {
+      .nav { display: none; }
+      .lang { margin-left: auto; }
+      main section .wrap { grid-template-columns: 1fr; gap: 20px; }
+    }
+    @media (max-width: 680px) {
+      .wrap { padding: 0 16px; }
+      .hero { padding: 40px 0; }
+      .hero .wrap { grid-template-columns: 1fr; gap: 28px; text-align: center; justify-items: center; }
+      .avatar { width: 168px; }
+      .meta, .links { justify-content: center; }
+      main section { padding: 40px 0; }
+      .entry { flex-direction: column; gap: 2px; }
+      .courses { columns: 1; }
+    }
+    @media print {
+      .topbar, .skip-link { display: none; }
+      body { background: #fff; color: #000; }
+      .hero, main section { padding: 20px 0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Iconos SVG reutilizables -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></symbol>
+    <symbol id="i-orcid" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/><text x="12" y="15.6" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="10" fill="currentColor">iD</text></symbol>
+    <symbol id="i-scholar" viewBox="0 0 24 24" fill="currentColor"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z"/></symbol>
+    <symbol id="i-rg" viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><text x="12" y="15.8" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="9.5" fill="currentColor">RG</text></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><text x="12" y="16.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="11" fill="currentColor">in</text></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="#inicio">J. L. Mendoza Valdés</a>
+      <nav class="nav" aria-label="Secciones">
+        <a href="#educacion">Educación</a>
+        <a href="#intereses">Intereses</a>
+        <a href="#publicaciones">Publicaciones</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#docencia">Docencia</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Idioma">
+        <span aria-current="page" lang="es">ES</span>
+        <a href="index-en.html" hreflang="en" lang="en" title="English version">EN</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="hero" id="inicio">
+    <div class="wrap">
+      <div class="avatar">
+        <img src="foto.jpg" alt="Retrato de José L. Mendoza Valdés" width="864" height="1184" fetchpriority="high" decoding="async">
+      </div>
+      <div>
+        <p class="eyebrow">Profesor Especial Eventual IV</p>
+        <h1><span class="title">Mgtr.</span> José Longino Mendoza Valdés</h1>
+        <p class="affil">
+          Departamento de Computación y Simulación de Sistemas<br>
+          Facultad de Ingeniería de Sistemas Computacionales<br>
+          <strong>Universidad Tecnológica de Panamá (UTP)</strong>
+        </p>
+        <ul class="meta">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:jose.mendoza11@utp.ac.pa">jose.mendoza11@utp.ac.pa</a></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg><span>Español (nativo) · Inglés (B2)</span></li>
+        </ul>
+        <ul class="links" aria-label="Perfiles académicos">
+          <li><a href="https://orcid.org/0000-0001-7374-7373" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-orcid"/></svg>ORCID<span class="sr-only"> (abre en pestaña nueva)</span></a></li>
+          <li><a href="https://scholar.google.com/citations?user=DYMtz-MAAAAJ&amp;hl=es" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg>Google Scholar<span class="sr-only"> (abre en pestaña nueva)</span></a></li>
+          <li><a href="https://www.researchgate.net/profile/Jose-Mendoza-76" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-rg"/></svg>ResearchGate<span class="sr-only"> (abre en pestaña nueva)</span></a></li>
+          <li><a href="https://www.linkedin.com/in/jos%C3%A9-mendoza-709685108" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn<span class="sr-only"> (abre en pestaña nueva)</span></a></li>
+          <li><a href="http://www.investigadores.utp.ac.pa/investigadores/jose.mendoza11" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>SicUTP<span class="sr-only"> (abre en pestaña nueva)</span></a></li>
+          <li><a href="https://www.academia.utp.ac.pa/jose-mendoza11" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>Perfil docente UTP<span class="sr-only"> (abre en pestaña nueva)</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <main id="contenido">
+    <!-- ================= EDUCACIÓN ================= -->
+    <section id="educacion" aria-labelledby="h-educacion">
+      <div class="wrap">
+        <h2 id="h-educacion">Educación</h2>
+        <ul class="list">
+          <li class="entry">
+            <div>
+              <h3>Maestría en Ciencias de la Computación (énfasis en Ciencia de Datos)</h3>
+              <p>Universidad de Glasgow, Escocia, Reino Unido · <span class="note">Becario SENACYT (BAE-2020-35)</span></p>
+            </div>
+            <span class="when">2021</span>
+          </li>
+          <li class="entry">
+            <div>
+              <h3>Especialidad en Entornos Virtuales de Aprendizaje</h3>
+              <p>Universidad Tecnológica Oteima, Panamá</p>
+            </div>
+            <span class="when">2022</span>
+          </li>
+          <li class="entry">
+            <div>
+              <h3>Especialidad en Docencia Superior</h3>
+              <p>Universidad del Istmo, Panamá</p>
+            </div>
+            <span class="when">2020</span>
+          </li>
+          <li class="entry">
+            <div>
+              <h3>Ingeniería en Sistemas y Computación</h3>
+              <p>Universidad Tecnológica de Panamá</p>
+            </div>
+            <span class="when">2019</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= ÁREAS DE INTERÉS ================= -->
+    <section id="intereses" aria-labelledby="h-intereses">
+      <div class="wrap">
+        <h2 id="h-intereses">Áreas de interés</h2>
+        <ul class="list interests">
+          <li>Visión por computadora y aprendizaje profundo</li>
+          <li>Patrimonio cultural digital: segmentación de deterioro y restauración de murales y documentos históricos</li>
+          <li>Aprendizaje semi-supervisado y auto-supervisado</li>
+          <li>Análisis de imágenes médicas</li>
+          <li>Transformers y modelos generativos para restauración de imágenes</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= PUBLICACIONES =================
+         Para agregar una publicación, copia un bloque <li class="pub"> ... </li>
+         y pégalo en la posición que corresponda (de la más reciente a la más antigua).
+         La numeración es automática. -->
+    <section id="publicaciones" aria-labelledby="h-publicaciones">
+      <div class="wrap">
+        <h2 id="h-publicaciones">Publicaciones seleccionadas</h2>
+        <div>
+          <ol class="list pubs">
+            <li class="pub">
+              <h3>A Benchmark for Cultural-Heritage Deterioration Segmentation: Semi-Supervised Baselines, Auto-Discovery, and Calibration-Aware Evaluation</h3>
+              <p class="venue"><em>ACM Journal on Computing and Cultural Heritage (JOCCH)</em>, 2026.</p>
+              <div class="tags">
+                <span class="badge">Q1</span>
+                <a class="doi" href="https://doi.org/10.1145/3850157" target="_blank" rel="noopener noreferrer">DOI: 10.1145/3850157 <svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg><span class="sr-only"> (abre en pestaña nueva)</span></a>
+              </div>
+            </li>
+            <li class="pub">
+              <h3>Self-Supervised Exploratory Characterization of Deteriorated Historical Documents for Visual Triage</h3>
+              <p class="venue"><em>Eurographics Workshop on Graphics and Cultural Heritage (GCH)</em>, 2026.</p>
+              <div class="tags">
+                <a class="doi" href="https://diglib.eg.org/items/2ba3a635-caf7-4141-98e5-3c5782889254" target="_blank" rel="noopener noreferrer">Eurographics Digital Library <svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg><span class="sr-only"> (abre en pestaña nueva)</span></a>
+              </div>
+            </li>
+            <li class="pub">
+              <h3>HistoRestorer: Transformer Architecture for Restoring Historic Murals with Cultural Authenticity Metrics</h3>
+              <p class="venue"><em>IEEE AmITIC</em>, 2025.</p>
+              <div class="tags">
+                <a class="doi" href="https://doi.org/10.1109/amitic68284.2025.11214511" target="_blank" rel="noopener noreferrer">DOI: 10.1109/amitic68284.2025.11214511 <svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg><span class="sr-only"> (abre en pestaña nueva)</span></a>
+              </div>
+            </li>
+            <li class="pub">
+              <h3>Multi skin lesions classification using fine-tuning and data-augmentation applying NASNet</h3>
+              <p class="authors">Cano E, Mendoza-Avilés J, Areiza M, Guerra N, <span class="me">Mendoza-Valdés JL</span>, Rovetto CA.</p>
+              <p class="venue"><em>PeerJ Computer Science</em>, 7:e371, 2021.</p>
+              <div class="tags">
+                <a class="doi" href="https://doi.org/10.7717/peerj-cs.371" target="_blank" rel="noopener noreferrer">DOI: 10.7717/peerj-cs.371 <svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg><span class="sr-only"> (abre en pestaña nueva)</span></a>
+              </div>
+            </li>
+            <li class="pub">
+              <h3>Músculos artificiales y optomiografía aplicados a una mano robótica</h3>
+              <p class="authors">Areiza M, <span class="me">Mendoza J</span>, Saavedra A, Serracín J.</p>
+              <p class="venue"><em>Revista de Iniciación Científica</em>, 5(2), 36–44, 2020.</p>
+              <div class="tags">
+                <a class="doi" href="https://doi.org/10.33412/rev-ric.v5.2.2502" target="_blank" rel="noopener noreferrer">DOI: 10.33412/rev-ric.v5.2.2502 <svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg><span class="sr-only"> (abre en pestaña nueva)</span></a>
+              </div>
+            </li>
+            <li class="pub">
+              <h3>Voice Model Training for Hispanic Speakers Applying Convolutional Neural Networks</h3>
+              <p class="authors">Areiza M, Palacios J, Castillo A, <span class="me">Mendoza J</span>.</p>
+              <p class="venue"><em>Memorias de Congresos UTP</em>, 1(1), 47–51, 2018.</p>
+              <div class="tags">
+                <a class="doi" href="https://revistas.utp.ac.pa/index.php/memoutp/article/view/1787" target="_blank" rel="noopener noreferrer">Ver artículo <svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg><span class="sr-only"> (abre en pestaña nueva)</span></a>
+              </div>
+            </li>
+          </ol>
+          <p class="more"><a href="https://scholar.google.com/citations?user=DYMtz-MAAAAJ&amp;hl=es" target="_blank" rel="noopener noreferrer">Lista completa en Google Scholar →<span class="sr-only"> (abre en pestaña nueva)</span></a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROYECTOS Y DISTINCIONES ================= -->
+    <section id="proyectos" aria-labelledby="h-proyectos">
+      <div class="wrap">
+        <h2 id="h-proyectos">Proyectos y distinciones</h2>
+        <ul class="list">
+          <li class="entry">
+            <div>
+              <h3>Proponente asociado, SENACYT Nuevos Investigadores 2018</h3>
+              <p>“Detección de masas y nódulos en radiografía de tórax con Deep Learning” (APY-NI-2018-13).</p>
+            </div>
+            <span class="when">2018–2019</span>
+          </li>
+          <li class="entry">
+            <div>
+              <h3>Estancia de investigación en inteligencia y visión artificial</h3>
+              <p>Universitat Politècnica de València, España.</p>
+            </div>
+            <span class="when">2019</span>
+          </li>
+          <li class="entry">
+            <div>
+              <h3>Mención de honor, Jornada de Iniciación Científica (JIC)</h3>
+              <p>Centro Regional de Chiriquí — clasificación de masas y nódulos en radiografías de tórax con DenseNet.</p>
+            </div>
+            <span class="when">2019</span>
+          </li>
+          <li class="entry">
+            <div>
+              <h3>Proyecto Más Innovador, JIC 2018</h3>
+              <p>“Músculos artificiales y optomiografía aplicada a una mano robótica”.</p>
+            </div>
+            <span class="when">2018</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= DOCENCIA =================
+         Para convertir esta lista en una tabla por semestre más adelante,
+         reemplaza el <ul class="list courses"> por algo como:
+
+         <table>
+           <thead><tr><th scope="col">Semestre</th><th scope="col">Asignatura</th><th scope="col">Grupo</th></tr></thead>
+           <tbody>
+             <tr><td>2026-II</td><td>Estructura de Datos I</td><td>1IL-121</td></tr>
+             ...
+           </tbody>
+         </table>
+
+         y añade en el <style> reglas como:
+           table { width: 100%; border-collapse: collapse; }
+           th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+           th { font-size: .8rem; text-transform: uppercase; color: var(--muted); }
+    -->
+    <section id="docencia" aria-labelledby="h-docencia">
+      <div class="wrap">
+        <h2 id="h-docencia">Docencia</h2>
+        <div>
+          <p class="lead">Asignaturas de pregrado impartidas en la Universidad Tecnológica de Panamá:</p>
+          <ul class="list courses">
+            <li>Arquitectura y Desarrollo de Aplicaciones Web</li>
+            <li>Desarrollo de Software IV, VI y VIII</li>
+            <li>Estructura de Datos I</li>
+            <li>Estructuras Discretas para la Computación</li>
+            <li>Herramientas de Programación Aplicadas IV</li>
+            <li>Ingeniería de Sistemas Dinámicos</li>
+            <li>Programación Aplicada II</li>
+            <li>Programación II</li>
+            <li>Tecnologías de Información y Comunicación</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© 2026 José L. Mendoza Valdés · Última actualización: noviembre 2026</p>
+    </div>
+  </footer>
+</body>
+</html>
