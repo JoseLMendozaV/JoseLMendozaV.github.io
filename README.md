@@ -16,6 +16,8 @@ No hay build ni dependencias: se editan los HTML, se hace commit y push a `main`
 
 En la sección `<!-- PUBLICACIONES -->` (o `PUBLICATIONS` en inglés), copia un bloque `<li class="pub">` y pégalo en su posición (de la más reciente a la más antigua). La numeración es automática.
 
+Solo se muestran las **5 más recientes**: las demás siguen en el HTML pero ocultas por la regla `.pubs .pub:nth-child(n+6) { display: none; }` del `<style>`. Al agregar una nueva arriba, la más antigua visible se oculta sola. Para mostrar más, cambia el `6` por otro número (o borra la regla para mostrarlas todas).
+
 ```html
 <li class="pub">
   <h3>Título del artículo</h3>

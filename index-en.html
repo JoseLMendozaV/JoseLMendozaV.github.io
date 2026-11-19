@@ -204,6 +204,7 @@
       background: var(--surface);
     }
     .doi:hover { border-color: var(--accent); }
+    .pubs .pub:nth-child(n+6) { display: none; } /* solo las 5 más recientes */
     .more { margin: 22px 0 0; font-weight: 500; }
 
     /* Teaching */
@@ -357,7 +358,8 @@
 
     <!-- ================= PUBLICATIONS =================
          To add a publication, copy a <li class="pub"> ... </li> block and paste it
-         in the right position (newest first). Numbering is automatic. -->
+         in the right position (newest first). Numbering is automatic. Only the first 5
+         are shown (see the .pub:nth-child(n+6) rule in <style>); change the 6 to show more. -->
     <section id="publications" aria-labelledby="h-publications">
       <div class="wrap">
         <h2 id="h-publications">Selected publications</h2>
@@ -372,6 +374,14 @@
               </div>
             </li>
             <li class="pub">
+              <h3>A Benchmark for Cultural-Heritage Deterioration Segmentation</h3>
+              <p class="authors"><span class="me">Mendoza Valdés JL</span>, Quesada-López C.</p>
+              <p class="venue"><em>Eurographics Workshop on Graphics and Cultural Heritage (GCH)</em>, 2026.</p>
+              <div class="tags">
+                <a class="doi" href="https://doi.org/10.2312/gch.20261045" target="_blank" rel="noopener noreferrer">DOI: 10.2312/gch.20261045 <svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg><span class="sr-only"> (opens in a new tab)</span></a>
+              </div>
+            </li>
+            <li class="pub">
               <h3>Self-Supervised Exploratory Characterization of Deteriorated Historical Documents for Visual Triage</h3>
               <p class="venue"><em>Eurographics Workshop on Graphics and Cultural Heritage (GCH)</em>, 2026.</p>
               <div class="tags">
@@ -383,6 +393,14 @@
               <p class="venue"><em>IEEE AmITIC</em>, 2025.</p>
               <div class="tags">
                 <a class="doi" href="https://doi.org/10.1109/amitic68284.2025.11214511" target="_blank" rel="noopener noreferrer">DOI: 10.1109/amitic68284.2025.11214511 <svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg><span class="sr-only"> (opens in a new tab)</span></a>
+              </div>
+            </li>
+            <li class="pub">
+              <h3>Detection of Deteriorated Sections in Murals using Machine Learning</h3>
+              <p class="authors"><span class="me">Mendoza Valdés JL</span>, Quesada-López C, Lara A.</p>
+              <p class="venue"><em>2024 IEEE VII Congreso Internacional en Inteligencia Ambiental, Ingeniería de Software y Salud Electrónica y Móvil (AmITIC)</em>, 1–8, 2024.</p>
+              <div class="tags">
+                <a class="doi" href="https://doi.org/10.1109/AmITIC62658.2024.10747620" target="_blank" rel="noopener noreferrer">DOI: 10.1109/AmITIC62658.2024.10747620 <svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg><span class="sr-only"> (opens in a new tab)</span></a>
               </div>
             </li>
             <li class="pub">
